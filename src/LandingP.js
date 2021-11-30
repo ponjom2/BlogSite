@@ -47,9 +47,9 @@ const LandingP = () => {
           onPress={() =>
             alert(
               "Thanks for subscribing " +
-                name +
-                "! The E-mail address you entered was " +
-                email
+              name +
+              "! The E-mail address you entered was " +
+              email
             )
           }
         ></Button>
