@@ -8,7 +8,6 @@ import GiveYourToscans from './src/GiveYourToscans';
 import UselessTextInput from './src/UselessTextInput';
 import MyLittleComponent from './src/MyLittleComponent';
 import LandingP from './src/LandingP';
-import CustomCompo from './src/CustomCompo';
 
 export default function App() {
   return (
@@ -20,7 +19,6 @@ export default function App() {
         <UselessTextInput />
         <MyLittleComponent />
         <ContactComponent />
-        {/* <CustomCompo /> */}
         <LandingP />
         <StatusBar style="auto" />
       </View >
