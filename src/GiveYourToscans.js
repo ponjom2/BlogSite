@@ -22,16 +22,16 @@ const GiveYourToscans = () => {
   }
 
   return (
-    <View style={styles.center}>
-      <Modal animationType="fade" visible={!modalVisible}>
-        <View style={styles.center}>
+    <View style={styles.container}>
+      <View style={styles.section_D}>
+        <Modal animationType="fade" visible={!modalVisible}>
           <View style={styles.popUp}>
             <Text style={styles.popUpText}>
-              Hi there, leave your Tosca comment!
+              Hi there, leave your Meow comment!
             </Text>
             <TextInput
               style={styles.popUpComment}
-              placeholder="Give your Toscan's right here!"
+              placeholder="Leave your comment right here!"
               value={input}
               onChangeText={(value) => setInput(value)}
             ></TextInput>
@@ -44,7 +44,7 @@ const GiveYourToscans = () => {
                 marginBottom: 15,
               }}
             >
-              Your comment is now Toscafied
+              Your comment is now Meowfied
             </Text>
             <View style={styles.row}>
               <Button
@@ -58,31 +58,47 @@ const GiveYourToscans = () => {
                 onPress={() => setModalVisible(!modalVisible)}
               ></Button>
             </View>
+
           </View>
-        </View>
-      </Modal>
-      <Button
-        style={styles.btnStyle}
-        title="Give some Tosca's"
-        onPress={() => closeTosca()}
-      ></Button>
+        </Modal>
+        <Button
+          style={styles.btnStyle}
+          title="Leave some comment"
+          onPress={() => closeTosca()}
+        ></Button>
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  center: {
-    flex: 1,
-    justifyContent: "center",
+
+  container: {
+    width: "100%",
+    height: "auto",
+    marginTop: 30,
     alignItems: "center",
+    justifyContent: "center",
   },
+
+  section_D: {
+    width: "70%",
+    height: "80%",
+    marginTop: 15,
+    padding: 10,
+    borderWidth: 1,
+    borderColor: "#514F59",
+    justifyContent: "center",
+  },
+
   row: {
     flexDirection: "row",
     justifyContent: "space-between",
   },
+
   popUp: {
     margin: 20,
-    backgroundColor: "aliceblue",
+    backgroundColor: "lightblue",
     borderRadius: 20,
     padding: 35,
     shadowColor: "#000",
@@ -92,12 +108,14 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "center",
   },
+
   popUpText: {
     fontSize: 18,
     fontWeight: "bold",
     marginBottom: 20,
     textAlign: "center",
   },
+
   popUpComment: {
     fontSize: 16,
     fontWeight: "normal",

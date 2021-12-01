@@ -1,36 +1,47 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
+import Snake from './src/Snake';
 import AddBlogText from './src/AddBlogText';
 import ContactComponent from './src/ContactComponent';
-import CustomCompo from './src/CustomCompo';
 import GiveYourToscans from './src/GiveYourToscans';
-import LandingP from './src/LandingP';
-import MyLittleComponent from './src/MyLittleComponent';
-import Snake from './src/Snake';
 import UselessTextInput from './src/UselessTextInput';
+import MyLittleComponent from './src/MyLittleComponent';
+import LandingP from './src/LandingP';
+import CustomCompo from './src/CustomCompo';
 
 export default function App() {
   return (
     <View style={main.container}>
-      <AddBlogText />
-      <ContactComponent />
-      <CustomCompo />
-      <GiveYourToscans />
-      <LandingP />
-      <MyLittleComponent />
-      <Snake />
-      <UselessTextInput />
-
-      <StatusBar style="auto" />
-    </View>
+      <View style={main.section}>
+        <Snake />
+        <AddBlogText />
+        <GiveYourToscans />
+        <UselessTextInput />
+        <MyLittleComponent />
+        <ContactComponent />
+        {/* <CustomCompo /> */}
+        <LandingP />
+        <StatusBar style="auto" />
+      </View >
+    </View >
   );
 }
 
 const main = StyleSheet.create({
   container: {
-    flex: 1,
+    width: "100%",
+    height: "auto",
     justifyContent: "center",
     alignItems: "center",
-  }
+    paddingVertical: 20,
+    backgroundColor: "#514F59",
+  },
+
+  section: {
+    width: "90%",
+    height: "100%",
+    alignItems: "center",
+    backgroundColor: "#e3e3e3",
+  },
 });

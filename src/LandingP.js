@@ -1,16 +1,5 @@
-import { StatusBar } from "expo-status-bar";
-
-import React, { cloneElement } from "react";
-
-import {
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
-  Button,
-  Image,
-  Alert,
-} from "react-native";
+import React from "react";
+import { StyleSheet, Text, TextInput, View, Button, Image, Alert, } from "react-native";
 
 import { useState } from "react"; //
 
@@ -20,67 +9,73 @@ const LandingP = () => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <Image
-          style={styles.banner}
-          source={require("../assets/flowers.png")}
-        />
-        <Text style={styles.title}>Subscribe to our Newsletter!</Text>
-      </View>
-      <View style={styles.inputBox}>
-        <TextInput
-          style={styles.input}
-          placeholder="Name"
-          onChangeText={(text) => setName(text)}
-        />
-        <TextInput
-          style={styles.input}
-          placeholder="E-mail"
-          onChangeText={(text2) => setEmail(text2)}
-        />
-      </View>
+      <View style={styles.section_G}>
+        <View style={styles.header}>
+          {/* <Image
+            style={styles.banner}
+            source={require("../assets/flowers.png")}
+          /> */}
+          <Text style={styles.title}>Subscribe to our Newsletter!</Text>
+        </View>
+        <View style={styles.inputBox}>
+          <TextInput
+            style={styles.input}
+            placeholder="Name"
+            onChangeText={(text) => setName(text)}
+          />
+          <TextInput
+            style={styles.input}
+            placeholder="E-mail"
+            onChangeText={(text2) => setEmail(text2)}
+          />
+        </View>
 
-      <View>
-        <Button
-          title="Subscribe"
-          color="#c84630"
-          onPress={() =>
-            alert(
-              "Thanks for subscribing " +
-              name +
-              "! The E-mail address you entered was " +
-              email
-            )
-          }
-        ></Button>
+        <View>
+          <Button
+            title="Subscribe"
+            color="#c84630"
+            onPress={() =>
+              alert(
+                "Thanks for subscribing " +
+                name +
+                "! The E-mail address you entered was " +
+                email
+              )
+            }
+          ></Button>
+        </View>
       </View>
-
-      <StatusBar style="auto" />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: "#514F59",
     width: "100%",
-    alignItems: "center",
+    height: "auto",
     justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#514F59",
   },
+
+  section_G: {
+    height: "auto",
+    marginTop: 15,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+
   header: {
-    flexDirection: "column",
-    justifyContent: "space-evenly",
     alignItems: "center",
     color: "#000",
-    backgroundColor: "#514F59",
   },
+
   title: {
     fontWeight: "bold",
-    fontSize: "25px",
-    backgroundColor: "#514F59",
-    color: "#E3E3E",
+    fontSize: 25,
+    color: "#E3E3E3",
   },
+
   inputBox: {
     flexDirection: "row",
     alignItems: "center",
@@ -88,18 +83,20 @@ const styles = StyleSheet.create({
   },
 
   input: {
-    backgroundColor: "#fff",
-    width: "170px",
-    height: "25px",
-    borderRadius: 10,
+    backgroundColor: "#e3e3e3",
+    width: "200",
+    height: "30",
+    borderRadius: 5,
     margin: 15,
+    paddingHorizontal: 5,
+    paddingVertical: 3,
   },
 
-  banner: {
-    width: "300px",
-    height: "55px",
-    backgroundColor: "#514F59",
-  },
+  // banner: {
+  //   width: "300",
+  //   height: "55",
+  //   backgroundColor: "#514F59",
+  // },
 });
 
 export default LandingP;

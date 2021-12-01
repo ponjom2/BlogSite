@@ -1,17 +1,9 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  Button,
-  ImageBackground,
-  resizeMode,
-} from "react-native";
+import { StyleSheet, Text, View, Button, ImageBackground, } from "react-native";
 import { useState } from "react";
 
 const MyLittleComponent = () => {
-  const [textColor, setTextColor] = useState("brown");
+  const [textColor, setTextColor] = useState("#c84630");
   const setTextToWhite = () => setTextColor("black");
 
   const [valueBTC, setValueBTC] = useState(57000);
@@ -47,147 +39,153 @@ const MyLittleComponent = () => {
 
   return (
     <View style={styles.container}>
-      <ImageBackground source={image} resizeMode="cover" style={styles.image}>
-        <View style={styles.top}>
-          <Text
-            style={{
-              fontWeight: "bold",
-              fontSize: "5rem",
-              color: "pink",
-              textShadowColor: "rgba(0, 0, 0, 0.75)",
-              textShadowOffset: { width: -1, height: 1 },
-              textShadowRadius: 10,
-            }}
-          >
-            Crypto Side
-          </Text>
-        </View>
-        <View style={styles.middle}>
-          <View style={styles.insideMiddle}>
-            <View style={styles.insideMiddleLeft}>
-              <Text
-                style={{
-                  color: textColor,
-                  fontWeight: "bold",
-                  fontSize: "2rem",
-                }}
-              >
-                Bitcoin
-              </Text>
-              <Text
-                style={{
-                  color: textColor,
-                  fontWeight: "bold",
-                  fontSize: "2rem",
-                }}
-              >
-                Ethereum
-              </Text>
-              <Text
-                style={{
-                  color: textColor,
-                  fontWeight: "bold",
-                  fontSize: "2rem",
-                }}
-              >
-                Loopring
-              </Text>
-              <Text
-                style={{
-                  color: textColor,
-                  fontWeight: "bold",
-                  fontSize: "2rem",
-                }}
-              >
-                Solana
-              </Text>
-              <Text
-                style={{
-                  color: textColor,
-                  fontWeight: "bold",
-                  fontSize: "2rem",
-                }}
-              >
-                Cardano
-              </Text>
-              <Text
-                style={{
-                  color: textColor,
-                  fontWeight: "bold",
-                  fontSize: "2rem",
-                }}
-              >
-                Dogecoin
-              </Text>
-            </View>
-            <View style={styles.insideMiddleRight}>
-              <Text style={styles.textStyle}>{valueBTC}</Text>
-              <Text style={styles.textStyle}>{valueETH}</Text>
-              <Text style={styles.textStyle}>{valueLRC}</Text>
-              <Text style={styles.textStyle}>{valueSOL}</Text>
-              <Text style={styles.textStyle}>{valueADA}</Text>
-              <Text style={styles.textStyle}>{valueDOGE}</Text>
+      <View style={styles.section_F}>
+        <ImageBackground source={image} resizeMode="cover">
+          <View style={styles.top}>
+            <Text
+              style={{
+                fontWeight: "bold",
+                fontSize: 60,
+                color: "#c84630",
+                textShadowColor: "rgba(0, 0, 0, 0.75)",
+                textShadowOffset: { width: -1, height: 1 },
+                textShadowRadius: 10,
+              }}
+            >
+              Cat Price
+            </Text>
+          </View>
+          <View style={styles.middle}>
+            <View style={styles.insideMiddle}>
+              <View style={styles.insideMiddleLeft}>
+                <Text
+                  style={{
+                    color: textColor,
+                    fontWeight: "bold",
+                    fontSize: 28,
+                  }}
+                >
+                  Meow
+                </Text>
+                <Text
+                  style={{
+                    color: textColor,
+                    fontWeight: "bold",
+                    fontSize: 28,
+                  }}
+                >
+                  Meow2
+                </Text>
+                <Text
+                  style={{
+                    color: textColor,
+                    fontWeight: "bold",
+                    fontSize: 28,
+                  }}
+                >
+                  Meow3
+                </Text>
+                <Text
+                  style={{
+                    color: textColor,
+                    fontWeight: "bold",
+                    fontSize: 28,
+                  }}
+                >
+                  Meow4
+                </Text>
+                <Text
+                  style={{
+                    color: textColor,
+                    fontWeight: "bold",
+                    fontSize: 28,
+                  }}
+                >
+                  Meow5
+                </Text>
+                <Text
+                  style={{
+                    color: textColor,
+                    fontWeight: "bold",
+                    fontSize: 28,
+                  }}
+                >
+                  Meow6
+                </Text>
+              </View>
+              <View style={styles.insideMiddleRight}>
+                <Text style={styles.textStyle}>{valueBTC}</Text>
+                <Text style={styles.textStyle}>{valueETH}</Text>
+                <Text style={styles.textStyle}>{valueLRC}</Text>
+                <Text style={styles.textStyle}>{valueSOL}</Text>
+                <Text style={styles.textStyle}>{valueADA}</Text>
+                <Text style={styles.textStyle}>{valueDOGE}</Text>
+              </View>
             </View>
           </View>
-        </View>
-        <View style={styles.bottom}>
-          <Text>Bottom</Text>
-          <Button
-            title="Ändra färg på namnen"
-            onPress={setTextToWhite}
-          ></Button>
-          <Button title="Ändra från DOLLAR till SEK" onPress={bundle}></Button>
-        </View>
-      </ImageBackground>
+          <View style={styles.bottom}>
+            <View style={styles.button}>
+              <Button
+                title="Ändra färg på namnen"
+                onPress={setTextToWhite}
+                style={styles.button}
+              ></Button>
+            </View>
+            <View style={styles.bottom}>
+              <Button title="Ändra från DOLLAR till SEK" onPress={bundle}></Button>
+            </View>
+          </View>
+        </ImageBackground>
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: "brown",
-    justifyContent: "space-around",
     width: "100%",
-    padding: "20px",
-  },
-  image: {
-    flex: 1,
+    height: "auto",
+    marginTop: 20,
+    alignItems: "center",
     justifyContent: "center",
   },
+
+  section_F: {
+    width: "70%",
+    height: "auto",
+    marginTop: 15,
+    padding: 10,
+    borderWidth: 1,
+    borderColor: "#514F59",
+    justifyContent: "space-between",
+  },
+
   top: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    textAlign: "center",
   },
-  middle: {
-    flex: 2,
-    padding: "10px",
-    alignItems: "center",
-  },
+
   insideMiddle: {
     width: "100%",
-    flex: 1,
-    padding: "10px",
+    padding: 5,
+    marginVertical: 10,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-evenly",
-    backgroundColor: "pink",
+    backgroundColor: "#99E2FF",
     borderRadius: 15,
   },
-  insideMiddleLeft: {
-    flex: 1,
-  },
-  insideMiddleRight: {
-    flex: 1,
-  },
+
   bottom: {
-    flex: 1,
-    padding: "10px",
+    padding: 5,
   },
+
+  button: {
+    marginBottom: 5,
+  },
+
   textStyle: {
     fontWeight: "bold",
-    fontSize: "2rem",
+    fontSize: 28,
   },
 });
 

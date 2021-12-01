@@ -1,37 +1,28 @@
 import React from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  TouchableOpacity,
-  ScrollView,
-  Image,
-} from "react-native";
+import { StyleSheet, View, ScrollView, Image, Button, } from "react-native";
 import { useState } from "react";
 
-const Snake = (props) => {
+const Snake = () => {
   const [switchValue, setSwitchValue] = useState(true);
   const toggleSwitch = () => {
     setSwitchValue(!switchValue);
     if (switchValue == true) {
-      setViewWidth(500);
-      setViewHeight(800);
+      setViewWidth("auto");
+      setViewHeight("auto");
     }
     if (switchValue == false) {
-      setViewWidth(1000);
-      setViewHeight(520);
+      setViewWidth("auto");
+      setViewHeight("auto");
     }
   };
 
-  const [viewWidth, setViewWidth] = useState(1000);
-  const [viewHeight, setViewHeight] = useState(520);
+  const [viewWidth, setViewWidth] = useState("auto");
+  const [viewHeight, setViewHeight] = useState("auto");
 
   return (
-    <View>
-      <View style={{ width: viewWidth, height: viewHeight }}>
-        <TouchableOpacity style={styles.button} onPress={toggleSwitch}>
-          <Text style={styles.buttonText}>Press here!</Text>
-        </TouchableOpacity>
+    <View style={styles.container}>
+      <View style={styles.section_C}>
+        <Button title="More cat pictures" style={styles.button} onPress={toggleSwitch}> </Button>
         <ScrollView horizontal={switchValue}>
           <Image
             style={styles.image}
@@ -57,54 +48,32 @@ const Snake = (props) => {
               uri: "https://image.shutterstock.com/image-photo/cute-grey-tabby-cat-cardboard-260nw-1526963033.jpg",
             }}
           />
-          <Image
-            style={styles.image}
-            source={{
-              uri: "https://image.shutterstock.com/image-photo/cat-sitting-small-cardboard-box-260nw-1275055966.jpg",
-            }}
-          />
-          <Image
-            style={styles.image}
-            source={{
-              uri: "https://image.shutterstock.com/image-photo/cat-box-cardboard-kitty-kitten-260nw-1949027509.jpg",
-            }}
-          />
-          <Image
-            style={styles.image}
-            source={{
-              uri: "https://image.shutterstock.com/image-photo/funny-cat-sleeping-cardboard-box-260nw-1588310083.jpg",
-            }}
-          />
         </ScrollView>
       </View>
-    </View>
+    </View >
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: "#fff",
+    width: "100%",
+    height: "auto",
     alignItems: "center",
     justifyContent: "center",
   },
-  subContainer: {
-    width: 1080,
-    height: 520,
+
+  section_C: {
+    width: "70%",
+    height: "auto",
+    marginTop: 15,
+    padding: 10,
+    borderWidth: 1,
+    borderColor: "#514F59",
   },
-  button: {
-    backgroundColor: "cyan",
-    padding: 5,
-    alignItems: "center",
-  },
-  buttonText: {
-    fontSize: 30,
-    color: "steelblue",
-  },
-  scrollView: {},
+
   image: {
-    width: 500,
-    height: 500,
+    width: 285,
+    height: 285,
   },
 });
 

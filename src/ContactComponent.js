@@ -1,66 +1,78 @@
 import React from "react";
-import { Button, StyleSheet, Switch, Text, View, Model, ScrollView, Platfrom, SafeAreaView, TextInput } from "react-native";
+import { StyleSheet, Text, View, TextInput } from "react-native";
+import CustomCompo from "./CustomCompo";
 
 const ContactComponent = () => {
-    const [text1, onChangeText1] = React.useState("Usless Text");
-    const [text2, onChangeText2] = React.useState("Usless Text");
-    const [text3, onChangeText3] = React.useState("Usless Text");
+	const [text1, onChangeText1] = React.useState("Useless Text");
+	const [text2, onChangeText2] = React.useState("Useless Text");
+	const [text3, onChangeText3] = React.useState("Useless Text");
 
-    const [number1, onChangeNumber1] = React.useState(null);
-    const [number2, onChangeNumber2] = React.useState(null);
-    const [number3, onChangeNumber3] = React.useState(null);
+	const [number1, onChangeNumber1] = React.useState(null);
+	const [number2, onChangeNumber2] = React.useState(null);
+	const [number3, onChangeNumber3] = React.useState(null);
 
-    return (
-        <View style={{ width: '25%', height: '50%', backgroundColor: 'white' }}>
-            <View style={[styles.container, { flexDirection: "column" }]}>
+	return (
+		<View style={styles.container}>
 
-                <Text>Contact Us</Text>
+			< Text style={styles.header} >Contact Us</Text >
+			<View style={styles.section_B}>
 
-                <View style={{ flex: 1, borderWidth: 1, backgroundColor: "skyblue" }}>
-                    <TextInput style={styles.input1} onChangeText2={onChangeNumber1} value={number1} placeholder="Enter your Name" keyboardType="numeric" />
-                </View>
+				<View style={styles.border}>
+					<TextInput style={styles.textInput} onChangeText2={onChangeNumber1} value={number1} placeholder="Enter your Name" keyboardType="numeric" />
+				</View>
 
-                <View style={{ width: 5, height: 5, backgroundColor: 'white' }} />
+				<View style={styles.border}>
+					<TextInput style={styles.textInput} onChangeText2={onChangeNumber2} value={number2} placeholder="Enter a valid email address" keyboardType="numeric" />
+				</View>
 
+				<View style={styles.border}>
+					<TextInput style={styles.textInput} onChangeText3={onChangeNumber3} value={number3} placeholder="Enter your message" keyboardType="numeric" />
+				</View>
 
-                <View style={{ flex: 1, borderWidth: 1, backgroundColor: "skyblue" }}>
-                    <TextInput style={styles.input2} onChangeText2={onChangeNumber2} value={number2} placeholder="Enter a valid email address" keyboardType="numeric" />
-                </View>
-
-                <View style={{ width: 5, height: 5, backgroundColor: 'white' }} />
-
-                <View style={{ flex: 1, borderWidth: 1, backgroundColor: "skyblue" }}>
-                    <TextInput style={styles.input3} onChangeText3={onChangeNumber3} value={number3} placeholder="Enter your message" keyboardType="numeric" />
-                </View>
-            </View>
-        </View>
-    );
+				<CustomCompo />
+			</View>
+		</View>
+	);
 };
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        padding: 20,
-        backgroundColor: "white",
-    },
-    input1: {
-        height: 40,
-        margin: 12,
-        borderWidth: 1,
-        padding: 10,
-    },
-    input2: {
-        height: 40,
-        margin: 12,
-        borderWidth: 1,
-        padding: 10,
-    },
-    input3: {
-        height: 40,
-        margin: 12,
-        borderWidth: 1,
-        padding: 10,
-    },
+	container: {
+		width: "100%",
+		height: "auto",
+		alignItems: "center",
+		justifyContent: "center",
+	},
+
+	header: {
+		fontSize: 24,
+		textAlign: "center",
+		marginTop: 20,
+		color: "#c84630",
+	},
+
+	section_B: {
+		width: "70%",
+		height: "auto",
+		marginTop: 5,
+		marginBottom: 20,
+		padding: 10,
+		borderWidth: 1,
+		borderColor: "#514F59",
+		justifyContent: "space-between",
+	},
+
+	border: {
+		borderWidth: 1,
+		borderColor: "#514F59",
+		marginBottom: 8,
+	},
+
+	textInput: {
+		width: "100%",
+		height: 30,
+		backgroundColor: "#99E2FF",
+		padding: 5,
+	},
 });
 
 export default ContactComponent;
