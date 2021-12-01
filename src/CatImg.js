@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, View, ScrollView, Image, Button, } from "react-native";
 import { useState } from "react";
 
-const Snake = () => {
+const CatImg = () => {
   const [switchValue, setSwitchValue] = useState(true);
   const toggleSwitch = () => {
     setSwitchValue(!switchValue);
@@ -10,7 +10,7 @@ const Snake = () => {
       setViewWidth("auto");
       setViewHeight("auto");
     }
-    if (switchValue == false) {
+    else if (switchValue == false) {
       setViewWidth("auto");
       setViewHeight("auto");
     }
@@ -21,7 +21,7 @@ const Snake = () => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.section_C}>
+      <View style={styles.section}>
         <Button title="More cat pictures" style={styles.button} onPress={toggleSwitch}> </Button>
         <ScrollView horizontal={switchValue}>
           <Image
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
 
-  section_C: {
+  section: {
     width: "70%",
     height: "auto",
     marginTop: 15,
@@ -77,4 +77,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Snake;
+export default CatImg;

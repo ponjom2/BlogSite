@@ -1,8 +1,8 @@
 import React from "react";
 import { StyleSheet, Text, View, TextInput } from "react-native";
-import CustomCompo from "./CustomCompo";
+import MoreInfo from "./MoreInfo";
 
-const ContactComponent = () => {
+const Contact = () => {
 	const [text1, onChangeText1] = React.useState("Useless Text");
 	const [text2, onChangeText2] = React.useState("Useless Text");
 	const [text3, onChangeText3] = React.useState("Useless Text");
@@ -15,7 +15,7 @@ const ContactComponent = () => {
 		<View style={styles.container}>
 
 			< Text style={styles.header} >Contact Us</Text >
-			<View style={styles.section_B}>
+			<View style={styles.section}>
 
 				<View style={styles.border}>
 					<TextInput style={styles.textInput} onChangeText2={onChangeNumber1} value={number1} placeholder="Enter your Name" keyboardType="numeric" />
@@ -29,7 +29,7 @@ const ContactComponent = () => {
 					<TextInput style={styles.textInput} onChangeText3={onChangeNumber3} value={number3} placeholder="Enter your message" keyboardType="numeric" />
 				</View>
 
-				<CustomCompo />
+				<MoreInfo />
 			</View>
 		</View>
 	);
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
 		color: "#c84630",
 	},
 
-	section_B: {
+	section: {
 		width: "70%",
 		height: "auto",
 		marginTop: 5,
@@ -75,4 +75,4 @@ const styles = StyleSheet.create({
 	},
 });
 
-export default ContactComponent;
+export default Contact;

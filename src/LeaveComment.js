@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, StyleSheet, Button, Modal } from "react-native";
+import { View, Text, TextInput, StyleSheet, Button, Modal, SafeAreaView } from "react-native";
 
 /*           Hybridutveckling Lab 3
     ToscaCreator: David "DVCZR" Zirath, IAD21  **/
 
-const GiveYourToscans = () => {
+const LeaveComment = () => {
   const [modalVisible, setModalVisible] = useState(true);
   const [show, setShow] = useState("none");
   const [comment, setComment] = useState(""); // 'comment' skickas ut => Sparas(+Obj)
@@ -23,43 +23,44 @@ const GiveYourToscans = () => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.section_D}>
+      <View style={styles.section}>
         <Modal animationType="fade" visible={!modalVisible}>
-          <View style={styles.popUp}>
-            <Text style={styles.popUpText}>
-              Hi there, leave your Meow comment!
-            </Text>
-            <TextInput
-              style={styles.popUpComment}
-              placeholder="Leave your comment right here!"
-              value={input}
-              onChangeText={(value) => setInput(value)}
-            ></TextInput>
-            <Text
-              style={{
-                display: show,
-                fontSize: 16,
-                fontWeight: "600",
-                justifyContent: "center",
-                marginBottom: 15,
-              }}
-            >
-              Your comment is now Meowfied
-            </Text>
-            <View style={styles.row}>
-              <Button
-                title="Post"
-                style={styles.btnStyle}
-                onPress={() => posTosca()}
-              ></Button>
-              <Button
-                title="Close"
-                style={styles.btnStyle}
-                onPress={() => setModalVisible(!modalVisible)}
-              ></Button>
+          <SafeAreaView>
+            <View style={styles.popUp}>
+              <Text style={styles.popUpText}>
+                Hi there, leave your Meow comment!
+              </Text>
+              <TextInput
+                style={styles.popUpComment}
+                placeholder="Leave your comment right here!"
+                value={input}
+                onChangeText={(value) => setInput(value)}
+              ></TextInput>
+              <Text
+                style={{
+                  display: show,
+                  fontSize: 16,
+                  fontWeight: "600",
+                  justifyContent: "center",
+                  marginBottom: 15,
+                }}
+              >
+                Your comment is now Meowfied
+              </Text>
+              <View style={styles.row}>
+                <Button
+                  title="Post"
+                  style={styles.btnStyle}
+                  onPress={() => posTosca()}
+                ></Button>
+                <Button
+                  title="Close"
+                  style={styles.btnStyle}
+                  onPress={() => setModalVisible(!modalVisible)}
+                ></Button>
+              </View>
             </View>
-
-          </View>
+          </SafeAreaView>
         </Modal>
         <Button
           style={styles.btnStyle}
@@ -81,9 +82,9 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
 
-  section_D: {
+  section: {
     width: "70%",
-    height: "80%",
+    height: "auto",
     marginTop: 15,
     padding: 10,
     borderWidth: 1,
@@ -124,4 +125,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default GiveYourToscans;
+export default LeaveComment;

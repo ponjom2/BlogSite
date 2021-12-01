@@ -1,8 +1,8 @@
 import React from "react";
-import { StyleSheet, Text, View, Button, ImageBackground, } from "react-native";
+import { StyleSheet, Text, View, Button, ImageBackground } from "react-native";
 import { useState } from "react";
 
-const MyLittleComponent = () => {
+const CatPrice = () => {
   const [textColor, setTextColor] = useState("#c84630");
   const setTextToWhite = () => setTextColor("black");
 
@@ -39,77 +39,32 @@ const MyLittleComponent = () => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.section_F}>
-        <ImageBackground source={image} resizeMode="cover">
+      <View style={styles.section}>
+        <ImageBackground source={image} resizeMode="cover" style={{ width: "auto" }}>
           <View style={styles.top}>
-            <Text
-              style={{
-                fontWeight: "bold",
-                fontSize: 60,
-                color: "#c84630",
-                textShadowColor: "rgba(0, 0, 0, 0.75)",
-                textShadowOffset: { width: -1, height: 1 },
-                textShadowRadius: 10,
-              }}
-            >
+            <Text style={styles.textShadow}>
               Cat Price
             </Text>
           </View>
           <View style={styles.middle}>
             <View style={styles.insideMiddle}>
               <View style={styles.insideMiddleLeft}>
-                <Text
-                  style={{
-                    color: textColor,
-                    fontWeight: "bold",
-                    fontSize: 28,
-                  }}
-                >
+                <Text style={[styles.textStyle, { color: textColor }]}>
                   Meow
                 </Text>
-                <Text
-                  style={{
-                    color: textColor,
-                    fontWeight: "bold",
-                    fontSize: 28,
-                  }}
-                >
+                <Text style={[styles.textStyle, { color: textColor }]}>
                   Meow2
                 </Text>
-                <Text
-                  style={{
-                    color: textColor,
-                    fontWeight: "bold",
-                    fontSize: 28,
-                  }}
-                >
+                <Text style={[styles.textStyle, { color: textColor }]}>
                   Meow3
                 </Text>
-                <Text
-                  style={{
-                    color: textColor,
-                    fontWeight: "bold",
-                    fontSize: 28,
-                  }}
-                >
+                <Text style={[styles.textStyle, { color: textColor }]}>
                   Meow4
                 </Text>
-                <Text
-                  style={{
-                    color: textColor,
-                    fontWeight: "bold",
-                    fontSize: 28,
-                  }}
-                >
+                <Text style={[styles.textStyle, { color: textColor }]}>
                   Meow5
                 </Text>
-                <Text
-                  style={{
-                    color: textColor,
-                    fontWeight: "bold",
-                    fontSize: 28,
-                  }}
-                >
+                <Text style={[styles.textStyle, { color: textColor }]}>
                   Meow6
                 </Text>
               </View>
@@ -128,16 +83,15 @@ const MyLittleComponent = () => {
               <Button
                 title="Ändra färg på namnen"
                 onPress={setTextToWhite}
-                style={styles.button}
               ></Button>
             </View>
-            <View style={styles.bottom}>
+            <View style={styles.button}>
               <Button title="Ändra från DOLLAR till SEK" onPress={bundle}></Button>
             </View>
           </View>
         </ImageBackground>
-      </View>
-    </View>
+      </View >
+    </View >
   );
 };
 
@@ -150,7 +104,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
 
-  section_F: {
+  section: {
     width: "70%",
     height: "auto",
     marginTop: 15,
@@ -181,12 +135,23 @@ const styles = StyleSheet.create({
 
   button: {
     marginBottom: 5,
+    backgroundColor: "#fff",
   },
 
   textStyle: {
     fontWeight: "bold",
     fontSize: 28,
   },
+
+  textShadow: {
+    fontWeight: "bold",
+    fontSize: 60,
+    color: "#c84630",
+    textShadowColor: "rgba(0, 0, 0, 0.75)",
+    textShadowOffset: { width: -1, height: 1 },
+    textShadowRadius: 10,
+  }
+
 });
 
-export default MyLittleComponent;
+export default CatPrice;

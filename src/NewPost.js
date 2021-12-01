@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
 import { useState } from 'react';
 
-const AddBlogText = () => {
+const NewPost = () => {
   const [oldText, setOldText] = useState("This is my first blog");
   const [newText, setNewText] = useState("");
 
@@ -10,7 +10,7 @@ const AddBlogText = () => {
 
     <View style={addBlog.container}>
       < Text style={addBlog.header} > My Post </Text >
-      <View style={addBlog.section_A}>
+      <View style={addBlog.section}>
         <Text>{oldText}</Text>
         <View style={addBlog.inputContainer}>
           <TextInput placeholder="Update Post"
@@ -40,9 +40,9 @@ const addBlog = StyleSheet.create({
     color: "#c84630",
   },
 
-  section_A: {
+  section: {
     width: "70%",
-    height: "80%",
+    height: "auto",
     marginTop: 5,
     padding: 10,
     borderWidth: 1,
@@ -66,4 +66,4 @@ const addBlog = StyleSheet.create({
   },
 });
 
-export default AddBlogText;
+export default NewPost;

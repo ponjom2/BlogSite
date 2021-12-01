@@ -4,7 +4,7 @@ import { StyleSheet, TextInput, Text, ImageBackground, View, Button, Alert } fro
 
 // Can you do like this Kristoffer? (onChangeText 1, 2, 3 etc) (its working but is it okay?) I call it "hemmabygge"
 
-const UselessTextInput = () => {
+const LogIn = () => {
   const [text1, onChangeText1] = React.useState("Name:");
   const [text2, onChangeText2] = React.useState("Email:");
   const [text3, onChangeText3] = React.useState("Password:");
@@ -14,7 +14,7 @@ const UselessTextInput = () => {
   return (
 
     <View style={main.container}>
-      <View style={main.section_E}>
+      <View style={main.section}>
         <ImageBackground source={image} resizeMode="cover" style={main.image}>
           <Text style={main.topText}> Welcome! </Text>
           <Text style={main.topText1}> Join our cat community </Text>
@@ -22,21 +22,18 @@ const UselessTextInput = () => {
             placeholder="Name:"
             style={main.nameBox}
             onChangeText={onChangeText1}
-          // value={text1}
           />
 
           <TextInput
             placeholder="Email:"
             style={main.nameBox}
             onChangeText={onChangeText2}
-          // value={text2}
           />
 
           <TextInput
             placeholder="Password:"
             style={main.nameBox}
             onChangeText={onChangeText3}
-          // value={text3}
           />
 
           <Button
@@ -53,7 +50,6 @@ const UselessTextInput = () => {
 };
 
 const main = StyleSheet.create({
-
   container: {
     width: "100%",
     height: "auto",
@@ -62,7 +58,7 @@ const main = StyleSheet.create({
     justifyContent: "center",
   },
 
-  section_E: {
+  section: {
     width: "70%",
     height: "auto",
     marginTop: 15,
@@ -99,11 +95,11 @@ const main = StyleSheet.create({
 
   image: {
     width: "100%",
-    height: "100%",
-    padding: 10,
+    height: "auto",
+    paddingVertical: 10,
     justifyContent: "center",
     alignItems: "center",
   },
 });
 
-export default UselessTextInput;
+export default LogIn;

@@ -1,28 +1,30 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
-import Snake from './src/Snake';
-import AddBlogText from './src/AddBlogText';
-import ContactComponent from './src/ContactComponent';
-import GiveYourToscans from './src/GiveYourToscans';
-import UselessTextInput from './src/UselessTextInput';
-import MyLittleComponent from './src/MyLittleComponent';
-import LandingP from './src/LandingP';
+import { View, StyleSheet, ScrollView } from 'react-native';
+import CatImg from './src/CatImg';
+import NewPost from './src/NewPost';
+import LeaveComment from './src/LeaveComment';
+import LogIn from './src/LogIn';
+import CatPrice from './src/CatPrice';
+import Contact from './src/Contact';
+import Subscribe from './src/Subscribe';
 
 export default function App() {
   return (
-    <View style={main.container}>
-      <View style={main.section}>
-        <Snake />
-        <AddBlogText />
-        <GiveYourToscans />
-        <UselessTextInput />
-        <MyLittleComponent />
-        <ContactComponent />
-        <LandingP />
-        <StatusBar style="auto" />
+    <ScrollView>
+      <View style={main.container}>
+        <View style={main.section}>
+          <CatImg />
+          <NewPost />
+          <LeaveComment />
+          <LogIn />
+          <CatPrice />
+          <Contact />
+          <Subscribe />
+          <StatusBar style="auto" />
+        </View >
       </View >
-    </View >
+    </ScrollView>
   );
 }
 
