@@ -17,7 +17,7 @@ const UselessTextInput = () => {
       <View style={main.section_E}>
         <ImageBackground source={image} resizeMode="cover" style={main.image}>
           <Text style={main.topText}> Welcome! </Text>
-          <Text style={main.topText1}> Join the our cat community </Text>
+          <Text style={main.topText1}> Join our cat community </Text>
           <TextInput
             placeholder="Name:"
             style={main.nameBox}

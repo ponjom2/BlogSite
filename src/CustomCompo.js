@@ -21,13 +21,13 @@ const CustomCompo = () => {
         <Button title={buttonText} onPress={pressEvent} />
         {buttonPress ? (
           <View style={styles.yungboi}>
-            <ScrollView style={styles.miniboi}>
+            <View style={styles.miniboi}>
               <Text style={styles.boldbois}>
                 Telefon:
                 <Text style={styles.smolbois}> +46(0)70 123 1232</Text>
               </Text>
               <Text style={styles.boldbois}>
-                Epost:<Text style={styles.smolbois}> abc@abc.se </Text>
+                Epost: <Text style={styles.smolbois}> abc @abc.se </Text>
               </Text>
               <Text style={styles.boldbois}>
                 Visit us:
@@ -35,11 +35,11 @@ const CustomCompo = () => {
               </Text>
               <Text style={styles.boldbois}>For more information</Text>
               <Text>Visit our webpage www.whereismypet.com</Text>
-            </ScrollView>
+            </View>
           </View>
         ) : null}
       </View>
-    </View>
+    </View >
     // </View>
   );
 };
@@ -57,10 +57,12 @@ const styles = StyleSheet.create({
     height: "auto",
     backgroundColor: "#fff",
   },
+
   yungboi: {
     width: "auto",
     height: "auto",
   },
+
   miniboi: {
     backgroundColor: "#99E2FF",
     width: "auto",
@@ -68,6 +70,7 @@ const styles = StyleSheet.create({
     margin: 5,
     padding: 10,
   },
+
   boldbois: {
     fontWeight: "700",
   },
