@@ -36,25 +36,18 @@ const LeaveComment = () => {
                 onChangeText={(value) => setInput(value)}
               ></TextInput>
               <Text
-                style={{
-                  display: show,
-                  fontSize: 16,
-                  fontWeight: "600",
-                  justifyContent: "center",
-                  marginBottom: 15,
-                }}
-              >
+                style={[styles.finalText, { display: show }]}>
                 Thanks for your Cat Appreciation, the Cat Gods love you too!
               </Text>
               <View style={styles.row}>
                 <Button
                   title="Post"
-                  style={styles.btnStyle}
+                  color="#d09e90"
                   onPress={() => posTosca()}
                 ></Button>
                 <Button
                   title="Close"
-                  style={styles.btnStyle}
+                  color="#d09e90"
                   onPress={() => setModalVisible(!modalVisible)}
                 ></Button>
               </View>
@@ -99,18 +92,20 @@ const styles = StyleSheet.create({
 
   popUp: {
     margin: 20,
-    backgroundColor: "lightblue",
+    backgroundColor: "#f6ece9",
     borderRadius: 20,
     padding: 35,
     shadowColor: "#000",
     shadowOpacity: 0.5,
   },
+
   btnStyle: {
     fontWeight: "bold",
     textAlign: "center",
   },
 
   popUpText: {
+    color: "#d09e90",
     fontSize: 18,
     fontWeight: "bold",
     marginBottom: 20,
@@ -119,9 +114,21 @@ const styles = StyleSheet.create({
 
   popUpComment: {
     fontSize: 16,
+    height: 50,
     fontWeight: "normal",
     marginBottom: 20,
     textAlign: "left",
+    padding: 10,
+    backgroundColor: "#fff",
+    borderRadius: 5,
+  },
+
+  finalText: {
+    fontSize: 16,
+    fontWeight: "600",
+    justifyContent: "center",
+    marginBottom: 15,
+    color: "#d09e90",
   },
 });
 

@@ -1,18 +1,14 @@
 import React from "react";
-import { StyleSheet, Text, View, TextInput } from "react-native";
+import { StyleSheet, Text, View, TextInput, Button } from "react-native";
 import { useState } from "react";
 import MoreInfo from "./MoreInfo";
 
 //CustomCompo - Henrik Andersson (Grupp 6)
 
 const Contact = () => {
-	const [text1, onChangeText1] = React.useState("Useless Text");
-	const [text2, onChangeText2] = React.useState("Useless Text");
-	const [text3, onChangeText3] = React.useState("Useless Text");
-
-	const [number1, onChangeNumber1] = React.useState(null);
-	const [number2, onChangeNumber2] = React.useState(null);
-	const [number3, onChangeNumber3] = React.useState(null);
+	const [name, setName] = useState("");
+	const [email, setEmail] = useState("");
+	const [message, setMessage] = useState("");
 
 	return (
 		<View style={styles.container}>
@@ -21,15 +17,18 @@ const Contact = () => {
 			<View style={styles.section}>
 
 				<View style={styles.border}>
-					<TextInput style={styles.textInput} onChangeText2={onChangeNumber1} value={number1} placeholder="Enter your Name" keyboardType="numeric" />
+					<TextInput placeholder="Name:" style={styles.textInput} onChangeText={setName} />
 				</View>
 
 				<View style={styles.border}>
-					<TextInput style={styles.textInput} onChangeText2={onChangeNumber2} value={number2} placeholder="Enter a valid email address" keyboardType="numeric" />
+					<TextInput placeholder="Email:" style={styles.textInput} onChangeText={setEmail} />
 				</View>
 
 				<View style={styles.border}>
-					<TextInput style={styles.textInput} onChangeText3={onChangeNumber3} value={number3} placeholder="Enter your message" keyboardType="numeric" />
+					<TextInput placeholder="Message:" style={styles.textInput} onChangeText={setMessage} />
+				</View>
+				<View style={styles.button}>
+					<Button title="Submit" color="#d09e90" onPress={() => { console.log("Name: " + name + "\n" + "Email: " + email + "\n" + "Message: " + message) }} />
 				</View>
 
 				<MoreInfo />
@@ -50,7 +49,8 @@ const styles = StyleSheet.create({
 		fontSize: 24,
 		textAlign: "center",
 		marginTop: 20,
-		color: "#c84630",
+		color: "#d09e90",
+		fontWeight: "600",
 	},
 
 	section: {
@@ -60,22 +60,26 @@ const styles = StyleSheet.create({
 		marginBottom: 20,
 		padding: 10,
 		borderWidth: 1,
+		borderRadius: 15,
 		borderColor: "#514F59",
 		justifyContent: "space-between",
 	},
 
 	border: {
-		borderWidth: 1,
-		borderColor: "#514F59",
 		marginBottom: 8,
 	},
 
 	textInput: {
 		width: "100%",
-		height: 30,
-		backgroundColor: "#99E2FF",
+		height: 25,
+		backgroundColor: "#fff",
 		padding: 5,
+		borderRadius: 5,
 	},
+
+	button: {
+		marginBottom: 5,
+	}
 });
 
 export default Contact;

@@ -5,19 +5,19 @@ import { useState } from 'react';
 //AddTextBlog - Ploo Jompong (Grupp 7)
 
 const NewPost = () => {
-  const [oldText, setOldText] = useState("This is my first post");
+  const [oldText, setOldText] = useState("Meow Meow");
   const [newText, setNewText] = useState("");
 
   return (
-    <View style={addBlog.container}>
-      <Text style={addBlog.header}> My Post </Text >
-      <View style={addBlog.section}>
+    <View style={newPost.container}>
+      <Text style={newPost.header}> My Post </Text >
+      <View style={newPost.section}>
         <Text>{oldText}</Text>
-        <View style={addBlog.inputContainer}>
+        <View style={newPost.inputContainer}>
           <TextInput placeholder="Update Post"
             multiline="true"
             onChangeText={setNewText}
-            style={addBlog.textInput}>
+            style={newPost.textInput}>
           </TextInput>
           <Button title="Submit" color="#d09e90" onPress={() => setOldText(newText)}></Button>
         </View>
@@ -26,7 +26,7 @@ const NewPost = () => {
   );
 };
 
-const addBlog = StyleSheet.create({
+const newPost = StyleSheet.create({
   container: {
     width: "100%",
     height: "auto",
@@ -35,11 +35,11 @@ const addBlog = StyleSheet.create({
   },
 
   header: {
-    fontSize: 24,
+    fontSize: 21,
     textAlign: "center",
     marginTop: 32,
     color: "#d09e90",
-    fontWeight: 600,
+    fontWeight: "600",
   },
 
   section: {
@@ -63,8 +63,6 @@ const addBlog = StyleSheet.create({
     width: "100%",
     height: 50,
     marginTop: 8,
-    borderWidth: 1,
-    borderColor: "#514F59",
     backgroundColor: "#fff",
     borderRadius: 5,
     padding: 5,

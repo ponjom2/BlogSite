@@ -14,11 +14,9 @@ export default function App() {
     <ScrollView>
       <View style={main.container}>
         <View style={main.section}>
-
           <View style={main.header}>
             <Text style={main.boldText}>CATLOVERS.</Text>
-            <Text style={main.byline}>A Blog for all Cat Lovers. </Text>
-
+            <Text style={main.byLine}>A Blog for all Cat Lovers.</Text>
           </View>
           <CatImg />
           <NewPost />
@@ -49,6 +47,7 @@ const main = StyleSheet.create({
     height: "100%",
     alignItems: "center",
     backgroundColor: "#f4d5d4",
+    borderRadius: 15,
   },
 
   header: {
@@ -58,13 +57,13 @@ const main = StyleSheet.create({
 
   boldText: {
     fontSize: 40,
-    fontWeight: 900,
+    fontWeight: "900",
     color: "#d09e90",
   },
 
-  byline: {
+  byLine: {
     fontSize: 21,
-    fontWeight: 350,
+    fontWeight: "400",
     color: "#d09e90",
   },
 });

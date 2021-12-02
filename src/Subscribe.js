@@ -12,6 +12,10 @@ const Subscribe = () => {
     <View style={styles.container}>
       <View style={styles.section}>
         <View style={styles.header}>
+          <Image
+            style={styles.banner}
+            source={{ uri: "https://previews.123rf.com/images/artdee2554/artdee25541902/artdee2554190200014/118380316-cute-baby-cat-with-pink-background-hand-drawn-style-for-printing-banner-t-shirt.jpg" }}
+          />
           <Text style={styles.title}>Subscribe to our Newsletter!</Text>
         </View>
         <View style={styles.inputBox}>
@@ -29,12 +33,12 @@ const Subscribe = () => {
         <View style={styles.button}>
           <Button
             title="Subscribe"
-            color="#c84630"
+            color="#d09e90"
             onPress={() =>
               alert(
                 "Thanks for subscribing " +
-                name +
-                "! The E-mail address you entered was " +
+                name + "!" + "\n" +
+                "The E-mail address you entered was " +
                 email
               )
             }
@@ -52,11 +56,13 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#d09e90",
+    borderBottomLeftRadius: 15,
+    borderBottomRightRadius: 15,
   },
 
   section: {
     height: "auto",
-    marginTop: 15,
+    marginVertical: 15,
     justifyContent: "center",
     alignItems: "center",
   },
@@ -67,7 +73,7 @@ const styles = StyleSheet.create({
 
   title: {
     fontWeight: "bold",
-    fontSize: 25,
+    fontSize: 24,
     color: "#e3e3e3",
   },
 
@@ -83,11 +89,18 @@ const styles = StyleSheet.create({
     margin: 15,
     paddingHorizontal: 5,
     paddingVertical: 3,
-    backgroundColor: "#e3e3e3",
+    backgroundColor: "#FFF",
   },
 
   button: {
-    paddingBottom: 10,
+    borderWidth: 1,
+  },
+
+  banner: {
+    height: 60,
+    width: 200,
+    borderRadius: 15,
+    marginBottom: 15,
   },
 });
 

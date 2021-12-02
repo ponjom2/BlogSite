@@ -5,12 +5,12 @@ import { StyleSheet, Text, View, Button } from "react-native";
 
 const MoreInfo = () => {
   const [buttonPress, setButtonPress] = useState(false);
-  const [buttonText, setButtonText] = useState("More information");
+  const [buttonText, setButtonText] = useState("Find Us");
 
   function pressEvent() {
     setButtonPress(!buttonPress);
     if (buttonPress == true) {
-      setButtonText("More information");
+      setButtonText("Find Us");
     } else {
       setButtonText("Close");
     }
@@ -19,7 +19,7 @@ const MoreInfo = () => {
   return (
     <View style={styles.container} >
       <View style={styles.papa}>
-        <Button title={buttonText} onPress={pressEvent} />
+        <Button title={buttonText} color="#d09e90" onPress={pressEvent} />
         {buttonPress ? (
           <View style={styles.miniboi}>
             <Text style={styles.boldbois}>
@@ -34,7 +34,7 @@ const MoreInfo = () => {
               <Text style={styles.smolbois}> Liljeholmen, Vårdhuset</Text>
             </Text>
             <Text style={styles.boldbois}>For more information</Text>
-            <Text>Visit our webpage www.whereismypet.com</Text>
+            <Text>Visit our webpage www.catlovers.com</Text>
           </View>
         ) : null}
       </View>
@@ -45,17 +45,16 @@ const MoreInfo = () => {
 const styles = StyleSheet.create({
   container: {
     justifyContent: "center",
-    alignItems: "center",
   },
 
   papa: {
-    backgroundColor: "#fff",
+    borderRadius: 15,
   },
 
   miniboi: {
     margin: 5,
     padding: 10,
-    backgroundColor: "#99E2FF",
+    backgroundColor: "#f6ece9",
   },
 
   boldbois: {

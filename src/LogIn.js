@@ -16,7 +16,7 @@ const LogIn = () => {
       <View style={main.section}>
         <ImageBackground source={image} resizeMode="cover" style={main.image}>
           <Text style={main.topText}> Welcome! </Text>
-          <Text style={main.topText1}> Join our Cat community </Text>
+          <Text style={main.topText1}> Join our Cat Community </Text>
           <TextInput
             placeholder="Name:"
             style={main.nameBox}
@@ -73,8 +73,7 @@ const main = StyleSheet.create({
     marginBottom: 10,
     padding: 10,
     fontSize: 14,
-    fontWeight: 'bold',
-    borderRadius: 10,
+    borderRadius: 5,
     alignItems: "center",
   },
 

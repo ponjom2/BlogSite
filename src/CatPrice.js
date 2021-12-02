@@ -5,35 +5,52 @@ import { useState } from "react";
 //MyLittleComponent - Oskar Larsson (Grupp 2)
 
 const CatPrice = () => {
+  const [colorValue, setColorValue] = useState(false);
   const [textColor, setTextColor] = useState("#d09e90");
-  const setTextToWhite = () => setTextColor("black");
+  const [currencyColor, setCurrencyColor] = useState("#000");
+  const [currency, setCurrency] = useState("$");
 
-  const [valueBTC, setValueBTC] = useState(57000);
-  const setToSEK = () => setValueBTC(valueBTC * 9 + " kr");
+  const [value, setValue] = useState(false);
+  const [siamese, setSiamese] = useState(570);
+  const [bengal, setBengal] = useState(433);
+  const [kittyCat, setKittyCat] = useState(294);
+  const [persian, setPersian] = useState(206);
+  const [showShoe, setShowShoe] = useState(148);
+  const [grayTabby, setGrayTabby] = useState(379);
 
-  const [valueETH, setValueETH] = useState(4333);
-  const setETHToSEK = () => setValueETH(valueETH * 9 + " kr");
+  const setTextToBlack = () => {
+    if (!colorValue) {
+      setTextColor("#000");
+      setCurrencyColor("#d09e90");
+      setColorValue(true)
+    } else if (colorValue) {
+      setTextColor("#d09e90");
+      setCurrencyColor("#000");
+      setColorValue(false);
+    }
+  }
 
-  const [valueLRC, setValueLRC] = useState(2.93);
-  const setLRCToSEK = () => setValueLRC(valueLRC * 9 + " kr");
-
-  const [valueSOL, setValueSOL] = useState(206);
-  const setSOLToSEK = () => setValueSOL(valueSOL * 9 + " kr");
-
-  const [valueADA, setValueADA] = useState(1.58);
-  const setADAToSEK = () => setValueADA(valueADA * 9 + " kr");
-
-  const [valueDOGE, setValueDOGE] = useState(0.212);
-  const setDOGEToSEK = () => setValueDOGE(valueDOGE * 9 + " kr");
-
-  const bundle = () => {
-    setToSEK();
-    setETHToSEK();
-    setLRCToSEK();
-    setSOLToSEK();
-    setADAToSEK();
-    setDOGEToSEK();
-  };
+  const setToSek = () => {
+    if (!value) {
+      setCurrency("Kr");
+      setSiamese(siamese * 9);
+      setBengal(bengal * 9);
+      setKittyCat(kittyCat * 9);
+      setPersian(persian * 9);
+      setShowShoe(showShoe * 9);
+      setGrayTabby(grayTabby * 9);
+      setValue(true);
+    } else if (value) {
+      setCurrency("$");
+      setSiamese(570);
+      setBengal(433);
+      setKittyCat(294);
+      setPersian(206);
+      setShowShoe(148);
+      setGrayTabby(379);
+      setValue(false);
+    }
+  }
 
   const image = {
     uri: "https://images.unsplash.com/photo-1585562125287-d748f3097a8f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bW9uZXl8ZW58MHx8MHx8&auto=format&fit=crop&w=400&q=60",
@@ -48,35 +65,38 @@ const CatPrice = () => {
               Cat Price
             </Text>
           </View>
+
           <View style={styles.middle}>
             <View style={styles.insideMiddle}>
               <View style={styles.insideMiddleLeft}>
+                <Text style={[styles.textStyle, { color: "gray", textAlign: "center" }]}>Breed</Text>
                 <Text style={[styles.textStyle, { color: textColor }]}>
-                  Meow
+                  Siamese
                 </Text>
                 <Text style={[styles.textStyle, { color: textColor }]}>
-                  Meow2
+                  Bengal
                 </Text>
                 <Text style={[styles.textStyle, { color: textColor }]}>
-                  Meow3
+                  Kittycat
                 </Text>
                 <Text style={[styles.textStyle, { color: textColor }]}>
-                  Meow4
+                  Persian
                 </Text>
                 <Text style={[styles.textStyle, { color: textColor }]}>
-                  Meow5
+                  Snowshoe
                 </Text>
                 <Text style={[styles.textStyle, { color: textColor }]}>
-                  Meow6
+                  Gray Tabby
                 </Text>
               </View>
               <View style={styles.insideMiddleRight}>
-                <Text style={styles.textStyle}>{valueBTC}</Text>
-                <Text style={styles.textStyle}>{valueETH}</Text>
-                <Text style={styles.textStyle}>{valueLRC}</Text>
-                <Text style={styles.textStyle}>{valueSOL}</Text>
-                <Text style={styles.textStyle}>{valueADA}</Text>
-                <Text style={styles.textStyle}>{valueDOGE}</Text>
+                <Text style={[styles.textStyle, { color: "gray", textAlign: "center" }]}>{currency}</Text>
+                <Text style={[styles.textStyle, { color: currencyColor }]}>{siamese}</Text>
+                <Text style={[styles.textStyle, { color: currencyColor }]}>{bengal}</Text>
+                <Text style={[styles.textStyle, { color: currencyColor }]}>{kittyCat}</Text>
+                <Text style={[styles.textStyle, { color: currencyColor }]}>{persian}</Text>
+                <Text style={[styles.textStyle, { color: currencyColor }]}>{showShoe}</Text>
+                <Text style={[styles.textStyle, { color: currencyColor }]}>{grayTabby}</Text>
               </View>
             </View>
           </View>
@@ -84,11 +104,11 @@ const CatPrice = () => {
             <View style={styles.button}>
               <Button
                 title="Ändra färg på namnen" color="#d09e90"
-                onPress={setTextToWhite}
+                onPress={setTextToBlack}
               ></Button>
             </View>
             <View style={styles.button}>
-              <Button title="Ändra från DOLLAR till SEK" color="#d09e90" onPress={bundle}></Button>
+              <Button title="Ändra från DOLLAR till SEK" color="#d09e90" onPress={setToSek}></Button>
             </View>
           </View>
         </ImageBackground>
