@@ -1,6 +1,9 @@
 import React from "react";
 import { StyleSheet, Text, View, TextInput } from "react-native";
+import { useState } from "react";
 import MoreInfo from "./MoreInfo";
+
+//CustomCompo - Henrik Andersson (Grupp 6)
 
 const Contact = () => {
 	const [text1, onChangeText1] = React.useState("Useless Text");

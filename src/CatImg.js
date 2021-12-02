@@ -2,27 +2,18 @@ import React from "react";
 import { StyleSheet, View, ScrollView, Image, Button, } from "react-native";
 import { useState } from "react";
 
+//Snake - Fredrik Kypta (Grupp 5)
+
 const CatImg = () => {
   const [switchValue, setSwitchValue] = useState(true);
   const toggleSwitch = () => {
     setSwitchValue(!switchValue);
-    if (switchValue == true) {
-      setViewWidth("auto");
-      setViewHeight("auto");
-    }
-    else if (switchValue == false) {
-      setViewWidth("auto");
-      setViewHeight("auto");
-    }
   };
-
-  const [viewWidth, setViewWidth] = useState("auto");
-  const [viewHeight, setViewHeight] = useState("auto");
 
   return (
     <View style={styles.container}>
       <View style={styles.section}>
-        <Button title="More cat pictures" style={styles.button} onPress={toggleSwitch}> </Button>
+        <Button title="More cat pictures" color="#d09e90" onPress={toggleSwitch}> </Button>
         <ScrollView horizontal={switchValue}>
           <Image
             style={styles.image}
@@ -69,12 +60,14 @@ const styles = StyleSheet.create({
     padding: 10,
     borderWidth: 1,
     borderColor: "#514F59",
+    borderRadius: 15,
   },
 
   image: {
     width: 285,
     height: 285,
   },
+
 });
 
 export default CatImg;

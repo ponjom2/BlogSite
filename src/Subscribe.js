@@ -1,7 +1,8 @@
 import React from "react";
 import { StyleSheet, Text, TextInput, View, Button, Image, Alert, } from "react-native";
+import { useState } from "react";
 
-import { useState } from "react"; //
+//LandingP - Michaela Beyer (Grupp 7)
 
 const Subscribe = () => {
   const [name, setName] = useState("Name");
@@ -11,10 +12,6 @@ const Subscribe = () => {
     <View style={styles.container}>
       <View style={styles.section}>
         <View style={styles.header}>
-          {/* <Image
-            style={styles.banner}
-            source={require("../assets/flowers.png")}
-          /> */}
           <Text style={styles.title}>Subscribe to our Newsletter!</Text>
         </View>
         <View style={styles.inputBox}>
@@ -29,7 +26,7 @@ const Subscribe = () => {
             onChangeText={(text2) => setEmail(text2)}
           />
         </View>
-        <View>
+        <View style={styles.button}>
           <Button
             title="Subscribe"
             color="#c84630"
@@ -44,7 +41,7 @@ const Subscribe = () => {
           ></Button>
         </View>
       </View>
-    </View>
+    </View >
   );
 };
 
@@ -54,7 +51,7 @@ const styles = StyleSheet.create({
     height: "auto",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#514F59",
+    backgroundColor: "#d09e90",
   },
 
   section: {
@@ -89,11 +86,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#e3e3e3",
   },
 
-  // banner: {
-  //   width: "300",
-  //   height: "55",
-  //   backgroundColor: "#514F59",
-  // },
+  button: {
+    paddingBottom: 10,
+  },
 });
 
 export default Subscribe;

@@ -2,8 +2,10 @@ import React from "react";
 import { StyleSheet, Text, View, Button, ImageBackground } from "react-native";
 import { useState } from "react";
 
+//MyLittleComponent - Oskar Larsson (Grupp 2)
+
 const CatPrice = () => {
-  const [textColor, setTextColor] = useState("#c84630");
+  const [textColor, setTextColor] = useState("#d09e90");
   const setTextToWhite = () => setTextColor("black");
 
   const [valueBTC, setValueBTC] = useState(57000);
@@ -81,12 +83,12 @@ const CatPrice = () => {
           <View style={styles.bottom}>
             <View style={styles.button}>
               <Button
-                title="Ändra färg på namnen"
+                title="Ändra färg på namnen" color="#d09e90"
                 onPress={setTextToWhite}
               ></Button>
             </View>
             <View style={styles.button}>
-              <Button title="Ändra från DOLLAR till SEK" onPress={bundle}></Button>
+              <Button title="Ändra från DOLLAR till SEK" color="#d09e90" onPress={bundle}></Button>
             </View>
           </View>
         </ImageBackground>
@@ -111,6 +113,7 @@ const styles = StyleSheet.create({
     padding: 10,
     borderWidth: 1,
     borderColor: "#514F59",
+    borderRadius: 15,
     justifyContent: "space-between",
   },
 
@@ -125,7 +128,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-evenly",
-    backgroundColor: "#99E2FF",
+    backgroundColor: "#f6ece9",
     borderRadius: 15,
   },
 
@@ -146,7 +149,7 @@ const styles = StyleSheet.create({
   textShadow: {
     fontWeight: "bold",
     fontSize: 60,
-    color: "#c84630",
+    color: "#d09e90",
     textShadowColor: "rgba(0, 0, 0, 0.75)",
     textShadowOffset: { width: -1, height: 1 },
     textShadowRadius: 10,

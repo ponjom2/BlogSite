@@ -2,14 +2,15 @@ import React from 'react';
 import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
 import { useState } from 'react';
 
+//AddTextBlog - Ploo Jompong (Grupp 7)
+
 const NewPost = () => {
-  const [oldText, setOldText] = useState("This is my first blog");
+  const [oldText, setOldText] = useState("This is my first post");
   const [newText, setNewText] = useState("");
 
   return (
-
     <View style={addBlog.container}>
-      < Text style={addBlog.header} > My Post </Text >
+      <Text style={addBlog.header}> My Post </Text >
       <View style={addBlog.section}>
         <Text>{oldText}</Text>
         <View style={addBlog.inputContainer}>
@@ -18,7 +19,7 @@ const NewPost = () => {
             onChangeText={setNewText}
             style={addBlog.textInput}>
           </TextInput>
-          <Button title="Submit" onPress={() => setOldText(newText)}></Button>
+          <Button title="Submit" color="#d09e90" onPress={() => setOldText(newText)}></Button>
         </View>
       </View>
     </View>
@@ -37,7 +38,8 @@ const addBlog = StyleSheet.create({
     fontSize: 24,
     textAlign: "center",
     marginTop: 32,
-    color: "#c84630",
+    color: "#d09e90",
+    fontWeight: 600,
   },
 
   section: {
@@ -47,6 +49,7 @@ const addBlog = StyleSheet.create({
     padding: 10,
     borderWidth: 1,
     borderColor: "#514F59",
+    borderRadius: 15,
     justifyContent: "space-between",
   },
 
@@ -58,11 +61,14 @@ const addBlog = StyleSheet.create({
 
   textInput: {
     width: "100%",
-    height: "auto",
+    height: 50,
     marginTop: 8,
     borderWidth: 1,
     borderColor: "#514F59",
-    backgroundColor: "#99E2FF",
+    backgroundColor: "#fff",
+    borderRadius: 5,
+    padding: 5,
+    marginBottom: 10,
   },
 });
 

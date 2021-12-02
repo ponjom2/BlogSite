@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, View, Button } from "react-native";
 
+//CustomCompo - Johan Näsvall (Grupp 7)
+
 const MoreInfo = () => {
   const [buttonPress, setButtonPress] = useState(false);
   const [buttonText, setButtonText] = useState("More information");

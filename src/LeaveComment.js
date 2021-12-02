@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import { View, Text, TextInput, StyleSheet, Button, Modal, SafeAreaView } from "react-native";
 
-/*           Hybridutveckling Lab 3
-    ToscaCreator: David "DVCZR" Zirath, IAD21  **/
+//GiveYourToscans - David Zirath (Grupp 3)
 
 const LeaveComment = () => {
   const [modalVisible, setModalVisible] = useState(true);
   const [show, setShow] = useState("none");
-  const [comment, setComment] = useState(""); // 'comment' skickas ut => Sparas(+Obj)
+  const [comment, setComment] = useState("");
   const [input, setInput] = useState("");
 
   function posTosca() {
@@ -28,11 +27,11 @@ const LeaveComment = () => {
           <SafeAreaView>
             <View style={styles.popUp}>
               <Text style={styles.popUpText}>
-                Hi there, leave your Meow comment!
+                Hi there, please leave a Meow if you too love Cats!
               </Text>
               <TextInput
                 style={styles.popUpComment}
-                placeholder="Leave your comment right here!"
+                placeholder="Leave your Meow right here!"
                 value={input}
                 onChangeText={(value) => setInput(value)}
               ></TextInput>
@@ -45,7 +44,7 @@ const LeaveComment = () => {
                   marginBottom: 15,
                 }}
               >
-                Your comment is now Meowfied
+                Thanks for your Cat Appreciation, the Cat Gods love you too!
               </Text>
               <View style={styles.row}>
                 <Button
@@ -63,8 +62,8 @@ const LeaveComment = () => {
           </SafeAreaView>
         </Modal>
         <Button
-          style={styles.btnStyle}
-          title="Leave some comment"
+          color="#d09e90"
+          title="Say Meow"
           onPress={() => closeTosca()}
         ></Button>
       </View>
@@ -89,6 +88,7 @@ const styles = StyleSheet.create({
     padding: 10,
     borderWidth: 1,
     borderColor: "#514F59",
+    borderRadius: 15,
     justifyContent: "center",
   },
 
